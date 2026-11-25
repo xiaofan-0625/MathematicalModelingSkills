@@ -1,0 +1,27 @@
+{
+  "source": "local national-award paper corpus (not distributed with this repository)",
+  "survey_date": "2026-09-09",
+  "inventory": {
+    "pdf": 517,
+    "word_rtf": 109,
+    "image": 431,
+    "matlab_files": 70,
+    "program_or_source_named_files": 99,
+    "attachment_named_files": 53,
+    "evaluation_or_commentary_files": 5
+  },
+  "sample_notes": {
+    "years": [1992, 2024],
+    "recent_text_rich_examples": ["2024A geometry", "2024B decision", "2024C planting", "2020D contour calibration"],
+    "common_artifact_classes": ["competition paper", "scanned paper", "journal reprint", "problem collection", "source code", "attachments", "slide deck"],
+    "extraction_limitations": ["many older PDFs are scanned or have broken character maps", "some folders mix award papers and teaching materials", "historical layout is not a substitute for current official rules"]
+  },
+  "observed_reference_quantiles": {
+    "abstract_zh_chars_median": 992,
+    "document_zh_chars_median": 19835,
+    "figures_median": 8,
+    "tables_median": 6,
+    "formulas_median": 24,
+    "references_median": 28
+  }
+}
