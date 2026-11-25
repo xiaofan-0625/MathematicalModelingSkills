@@ -1,0 +1,194 @@
+%! Mode:: "TeX:UTF-8"
+%! TEX program = xelatex
+\PassOptionsToPackage{quiet}{xeCJK}
+\PassOptionsToPackage{table,xcdraw}{xcolor}
+\documentclass[withoutpreface,bwprint]{cumcmthesis}
+\usepackage{tcolorbox}
+\usepackage{newtxmath}  % Times 风格数学字体
+%\usepackage{newtxmath}  %使用Times New Roman 字体的方法
+%\usepackage{mathptmx}%使用Times New Roman 字体的方法
+%\usepackage{txfonts}%使用Times New Roman 字体的方法,全部注释掉也行。
+\setlength{\heavyrulewidth}{1.5pt} % 设置顶部和底部线条的粗细
+\setlength{\lightrulewidth}{1pt} % 设置中间线条的粗细
+\usepackage{threeparttable}
+\usepackage[numbers,sort&compress]{natbib}  % 文献管理宏包
+\definecolor{lightblue1}{RGB}{173,216,230} % 浅蓝（示例色）
+\definecolor{lightblue2}{RGB}{119,191,219} % 中蓝（示例色）
+\definecolor{lightblue3}{RGB}{70,130,180}  % 深蓝（示例色）
+
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+
+% 定义颜色
+\definecolor{codegreen}{rgb}{0,0.5,0} % 更深的绿色
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{1,1,1} % 白色背景
+\definecolor{titlebg}{rgb}{0.9,0.9,0.9} % 标题浅灰色背景
+\definecolor{blackframe}{rgb}{0,0,0} % 深黑色边框
+
+% 定义基本代码样式
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   % 白色背景
+	commentstyle=\color{codegreen},       % 注释使用绿色
+	keywordstyle=\color{blue},            % 关键字使用蓝色
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{red},              % 字符串使用红色
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=4,
+	frame=single,                    % 单线边框
+	framesep=0pt,                    % 边框与内容无间距
+	framerule=1pt,                   % 边框线宽
+	rulecolor=\color{blackframe},    % 深黑色边框
+	xleftmargin=0pt,                 % 左边框无额外间距
+	xrightmargin=0pt,                % 右边框无额外间距
+	morestring=[b]{"}                % 识别双引号字符串
+}
+
+
+
+% 为 Python 设置特定样式
+\lstdefinestyle{Pythonstyle}{
+	style=mystyle,
+	language=Python,
+	morecomment=[l]{\#},             % 识别 # 开头的行注释
+	morekeywords={import, as, def, class, for, while, if, elif, else, 
+		return, try, except, finally, with, in, is, not, and, or,
+		print, lambda, None, True, False, pass, break, continue,
+		pd, np, cp, random, math, Prophet, datetime, timedelta,
+		plt, cross_validation, performance_metrics, LinearRegression,
+		mean_squared_error, mean_absolute_error, sm, read_excel,
+		groupby, merge, loc, reset_index, pivot_table, to_excel}
+}
+
+% 自定义标题框样式
+\newenvironment{codeheader}[1]{%
+	\begin{tcolorbox}[
+		colback=titlebg,
+		colframe=blackframe,
+		sharp corners,
+		boxrule=1pt,
+		left=0pt,
+		right=0pt,
+		top=0pt,
+		bottom=0pt,
+		boxsep=5pt,
+		before skip=10pt,
+		after skip=10pt
+		]%
+		\textbf{#1}
+	\end{tcolorbox}
+	\vspace{-5pt}
+	\hrule height 1pt\relax
+	\vspace{5pt}
+}{}
+
+\title{}  % 论文标题
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 正文
+
+\begin{document}
+	
+	\maketitle
+	\begin{abstract}
+		
+		\textbf{关键词：{}}
+	\end{abstract}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+	
+	% \tableofcontents  % 目录
+	% \newpage
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% 参考文献
+	\section{问题重述}
+	\subsection{问题背景}
+	\subsection{问题提出}
+	\section{问题分析}
+	\subsection{问题一分析}
+	\subsection{问题二分析}
+	\subsection{问题三分析}
+	\subsection{问题四分析}
+	\section{模型假设}
+	\section{符号说明}
+	\section{数据预处理}
+	\section{问题一模型的建立与求解}
+	\section{问题二模型的建立与求解}
+	\section{问题三模型的建立与求解}
+	\section{问题四模型的建立与求解}
+	\section{模型灵敏度分析}
+	\section{模型评价与推广}
+	
+	\newpage
+	\begin{thebibliography}{99}
+		\bibitem{a}
+	\end{thebibliography}
+	
+	\newpage
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%% 附录
+	\begin{appendices}
+		\section{支撑材料文件列表}
+		\renewcommand{\baselinestretch}{1}%和下面那个并不直接冲突，改不改都行
+		\begin{table}[H]
+			\tabcolsep=0.7cm
+			\renewcommand\arraystretch{1.5}  % 正确的应该是 1.5 而不是 -1.5，以避免行间距被压缩，和上面不冲突，如果有就是在它的基础上。
+			\centering
+			\vspace{1ex}
+			\begin{tabular}{ll}
+				\toprule[1.5pt]
+				\textbf{文件名} & \textbf{功能描述} \\
+				\midrule[1pt]
+				
+				\bottomrule[1.5pt]
+			\end{tabular}
+		\end{table}
+		
+		
+		
+		
+		\section{代码}%%%captionpos=t让名称置顶出现
+		\begin{codeheader}{附录1 数据预处理代码}
+		\end{codeheader}
+		\begin{lstlisting}[style=Pythonstyle]
+			
+		\end{lstlisting}
+		
+		
+		\begin{codeheader}{附录2 问题一的代码}
+		\end{codeheader}
+		\begin{lstlisting}[style=Pythonstyle]
+			
+		\end{lstlisting}
+		
+		
+		\begin{codeheader}{附录3 问题二代码}
+			
+		\end{codeheader}
+		\begin{lstlisting}[style=Pythonstyle]
+			
+		\end{lstlisting}
+		
+		\begin{codeheader}{附录4 问题三代码}
+		\end{codeheader}
+		\begin{lstlisting}[style=Pythonstyle]
+			
+		\end{lstlisting}
+		
+		
+		
+		
+	\end{appendices}
+	
+\end{document}

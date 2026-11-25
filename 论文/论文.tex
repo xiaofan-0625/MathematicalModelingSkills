@@ -1,0 +1,82 @@
+% ============================================
+% 数学建模竞赛论文主文件
+% 由 mathskills 自动生成与管理
+% 编译: xelatex -interaction=nonstopmode 论文.tex (×2)
+% ============================================
+
+\documentclass[12pt,a4paper]{ctexart}
+
+% === 页面设置 ===
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.8cm, right=2.8cm]{geometry}
+
+% === 基础宏包 ===
+\usepackage{etoolbox}
+\usepackage{ctex}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{enumitem}
+
+% === TikZ 流程图 ===
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\tikzset{
+  box/.style={rectangle, draw, minimum width=3.2cm, minimum height=0.9cm, align=center, font=\small},
+  arrow/.style={thick, -{Stealth}}
+}
+
+% === 表格列类型 ===
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+
+% === 标题加粗 ===
+\renewcommand{\textbf}[1]{{\song\bfseries #1}}
+
+% === 超链接 ===
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!60!black,
+  citecolor=blue!40!black,
+  urlcolor=blue!60!black
+}
+
+% ============================================
+\begin{document}
+
+% === 标题 ===
+\title{\heiti\zihao{2} 【论文标题——由AI自动填充】}
+\author{}
+\date{}
+\maketitle
+
+% === 摘要 ===
+\input{sections/0.摘要.tex}
+
+% === 目录 ===
+\tableofcontents
+\newpage
+
+% === 正文 ===
+\input{sections/1.问题重述.tex}
+\input{sections/2.问题分析.tex}
+\input{sections/3.模型假设.tex}
+\input{sections/4.符号说明.tex}
+\input{sections/5.问题一模型构建与求解.tex}
+\input{sections/6.问题二模型构建与求解.tex}
+\input{sections/7.问题三模型构建与求解.tex}
+\input{sections/8.问题四模型构建与求解.tex}
+\input{sections/9.模型灵敏度分析.tex}
+\input{sections/10.模型评价与推广.tex}
+
+% === 参考文献（单独一页） ===
+\newpage
+\input{sections/参考文献.tex}
+
+\end{document}

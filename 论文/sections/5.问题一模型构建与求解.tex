@@ -1,0 +1,109 @@
+% ============================================
+% 5. 问题一的模型构建与求解
+% ============================================
+
+\section{问题一的模型构建与求解}
+
+\subsection{求解思路}
+
+针对问题一，本问是一个\textbf{【问题类型：预测/分类/评价/优化】}问题。本文首先对附件数据进行\textbf{【预处理】}，提取\textbf{【关键特征】}；接着，通过算法对比选择\textbf{【最优算法】}；然后，建立\textbf{【模型名称】}模型并采用\textbf{【求解方法】}进行求解；最后，对结果进行\textbf{【验证与分析】}。
+
+\subsection{模型建立}
+
+\textbf{Step 1：数据预处理}
+
+（1）预处理原因：原始数据来源于\textbf{【赛题附件】}，格式为\textbf{【xlsx/csv】}。原始数据存在\textbf{【缺失值/量纲不统一/异常值/多级表头】}等问题，必须进行预处理以确保建模质量。
+
+（2）数据理解与提取：从附件数据中提取\textbf{【关键字段列表】}，共计\textbf{【N】}个特征、\textbf{【M】}条样本。
+
+（3）预处理步骤：
+\begin{itemize}
+  \item 数据清洗——对缺失值采用\textbf{【均值/中位数/线性插值】}填充；对异常值采用\textbf{【IQR法 / Z-score法（阈值=3）】}检测并替换为\textbf{【边界值】}。
+  \item 标准化——为消除量纲影响，采用\textbf{【Min-Max归一化 / Z-score标准化】}：
+  \begin{equation}
+  x' = \frac{x - x_{\min}}{x_{\max} - x_{\min}}
+  \end{equation}
+  其中，$x$为原始值，$x_{\min}$为最小值，$x_{\max}$为最大值，$x'$为归一化后的值。
+  \item \textbf{【如有特征衍生，在此展开】}
+\end{itemize}
+
+（4）预处理结果：处理前后关键统计量对比如表\ref{tab:preprocess}所示。
+
+\begin{longtable}{>{\centering\arraybackslash}p{0.12\textwidth}>{\centering\arraybackslash}p{0.17\textwidth}>{\centering\arraybackslash}p{0.17\textwidth}>{\centering\arraybackslash}p{0.17\textwidth}>{\centering\arraybackslash}p{0.17\textwidth}}
+  \caption{数据预处理前后统计量对比}
+  \label{tab:preprocess} \\
+  \toprule
+  指标 & 处理前均值 & 处理前标准差 & 处理后均值 & 处理后标准差 \\
+  \midrule \endfirsthead
+  \caption{数据预处理前后统计量对比（续）} \\ \toprule
+  指标 & 处理前均值 & 处理前标准差 & 处理后均值 & 处理后标准差 \\ \midrule \endhead
+  \bottomrule \endfoot
+  ... & ... & ... & ... & ... \\
+\end{longtable}
+
+（5）预处理完成，数据已规整，为后续建模提供了清洁输入。
+
+\textbf{Step 2：算法选择}
+
+该问题本质上是一个\textbf{【问题类型】}问题，需要在\textbf{【条件】}下寻找\textbf{【目标】}。常用求解算法包括\textbf{【算法A】}、\textbf{【算法B】}、\textbf{【算法C】}等。本节选取\textbf{【3-4】}种经典算法，从\textbf{【维度1】}、\textbf{【维度2】}、\textbf{【维度3】}、\textbf{【维度4】}等方面进行评估，结果如表\ref{tab:algo_compare}所示。
+
+\begin{longtable}{>{\centering\arraybackslash}p{0.12\textwidth}>{\centering\arraybackslash}p{0.18\textwidth}>{\centering\arraybackslash}p{0.18\textwidth}>{\centering\arraybackslash}p{0.18\textwidth}>{\centering\arraybackslash}p{0.18\textwidth}}
+  \caption{候选算法能力对比}
+  \label{tab:algo_compare} \\
+  \toprule
+  算法名称 & 全局搜索能力 & 收敛速度 & 约束处理能力 & 求解稳定性 \\
+  \midrule \endfirsthead
+  \caption{候选算法能力对比（续）} \\ \toprule
+  算法名称 & 全局搜索能力 & 收敛速度 & 约束处理能力 & 求解稳定性 \\ \midrule \endhead
+  \bottomrule \endfoot
+  遗传算法（GA） & 优 & 优 & 良 & 良 \\
+  蚁群算法（ACO） & 良 & 中 & 优 & 中 \\
+  模拟退火（SA） & 中 & 良 & 良 & 中 \\
+\end{longtable}
+
+通过上述对比可以看出，\textbf{【选定算法（英文缩写）】}在\textbf{【优势维度】}方面表现最优，因此本文选择该算法作为核心求解方法。
+
+\textbf{Step 3：模型构建}
+
+本文采用\textbf{【模型全称】（【英文缩写】）}建立数学模型。该模型的基本形式为：
+
+\begin{equation}
+y = f(\mathbf{x}; \boldsymbol{\theta})
+\end{equation}
+
+其中，$y$为\textbf{【输出/预测目标】}，$\mathbf{x}$为\textbf{【输入特征向量】}，$\boldsymbol{\theta}$为\textbf{【模型参数】}。
+
+% === AI 在此继续展开公式推导，每步≥6-7公式 ===
+
+\textbf{Step 4：模型求解}
+
+采用\textbf{【求解算法】}对上述模型进行求解。参数设定为：\textbf{【参数1】}=\textbf{【值】}（来源：\textbf{【网格搜索/文献/数据统计】}），\textbf{【参数2】}=\textbf{【值】}。
+
+\subsection{结果分析}
+
+求解结果如表\ref{tab:result1}所示。
+
+\begin{longtable}{>{\centering\arraybackslash}p{0.20\textwidth}>{\centering\arraybackslash}p{0.20\textwidth}>{\centering\arraybackslash}p{0.20\textwidth}>{\centering\arraybackslash}p{0.20\textwidth}}
+  \caption{问题一求解结果}
+  \label{tab:result1} \\
+  \toprule
+  指标1 & 指标2 & 指标3 & 指标4 \\
+  \midrule \endfirsthead
+  \caption{问题一求解结果（续）} \\ \toprule
+  指标1 & 指标2 & 指标3 & 指标4 \\ \midrule \endhead
+  \bottomrule \endfoot
+  ... & ... & ... & ... \\
+\end{longtable}
+
+结果可视化如图\ref{fig:result1}所示。
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{../../求解/问题一/图片/【图片名】.png}
+  \caption{问题一结果可视化}
+  \label{fig:result1}
+\end{figure}
+
+如图\ref{fig:result1}所示，\textbf{【对图表的具体分析，≥3行】}。从图中可以观察到，\textbf{【趋势/规律/异常点】}。这一结果表明\textbf{【与题目要求的关联】}。
+
+综上所述，问题一的求解结果表明，\textbf{【核心结论】}。模型的\textbf{【精度指标】}达到了\textbf{【具体数值】}，验证了所建模型的有效性。
