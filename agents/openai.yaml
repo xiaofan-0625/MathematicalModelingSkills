@@ -1,0 +1,6 @@
+interface:
+  display_name: "MathSkills 数学建模竞赛工作流"
+  short_description: "覆盖审题建模、证据验证、回退重做、写作评分与提交闭环"
+  default_prompt: "Use $mathskills to run this modeling project with full Skill coverage, evidence gates, controlled rework, and reproducible delivery."
+policy:
+  allow_implicit_invocation: true

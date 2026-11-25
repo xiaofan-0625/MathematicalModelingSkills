@@ -1,0 +1,182 @@
+version: 4.6
+templates:
+  default-cumcm-latex:
+    competition: CUMCM
+    source: 国赛/template.tex
+    dependencies: [国赛/cumcmthesis.cls, 国赛/YaHei.Consolas.1.11b.ttf, 国赛/Fira Code Retina Nerd Font Complete.otf]
+    destination: 论文/论文.tex
+    compiler: xelatex
+    passes: 2
+  legacy-latex:
+    competition: fallback
+    source: 论文/论文.tex
+    compiler: xelatex
+    passes: 2
+canonical_skills:
+  problem-forensics:
+    path: skills/problem-forensics/SKILL.md
+    aliases: [problem-interpretation, problem-triage, task-contract, specification-writing]
+  data-analysis:
+    path: skills/data-analysis/SKILL.md
+    aliases: [smart-eda, data-wrangler, statistical-analysis, exploratory-data-analysis, statsmodels, scikit-learn, pymc-bayesian-modeling, shap, scikit-survival]
+  external-data-acquisition:
+    path: skills/external-data-acquisition/SKILL.md
+    aliases: [external-data, data-acquisition, data-sourcing, public-data, fred-economic-data, datacommons-client, alpha-vantage, get-available-resources]
+  experimental-design-and-inference:
+    path: skills/experimental-design-and-inference/SKILL.md
+    aliases: [experimental-design, design-of-experiments, statistical-power, power-analysis, randomization, blocking, factorial-design, prospective-study-design, analytical-method-validation]
+  model-deliberation:
+    path: skills/model-deliberation/SKILL.md
+    aliases: [finding-unknowns, grill-me, llm-council, mental-models, naval-thinking, idea-evaluator, research-supervisor, supervisor-skills, idea-discovery, idea-creator, idea-discovery-robot, novelty-check, research-refine, kill-argument]
+  model-formulation-and-solving:
+    path: skills/model-formulation-and-solving/SKILL.md
+    aliases: [model-formulation, solver-design, optimization-implementation]
+  mathematical-derivation-and-proof:
+    path: skills/mathematical-derivation-and-proof/SKILL.md
+    aliases: [formula-derivation, proof-writer, proof-checker, proof-orchestrator, mathematical-proof, derivation-audit]
+  forecasting-and-backtesting:
+    path: skills/forecasting-and-backtesting/SKILL.md
+    aliases: [time-series-forecasting, rolling-backtest, walk-forward-validation, probabilistic-forecasting]
+  simulation-and-uncertainty:
+    path: skills/simulation-and-uncertainty/SKILL.md
+    aliases: [monte-carlo, discrete-event-simulation, scenario-analysis, uncertainty-propagation, simpy]
+  geospatial-modeling:
+    path: skills/geospatial-modeling/SKILL.md
+    aliases: [geopandas, spatial-analysis, gis-modeling, spatial-validation]
+  network-modeling:
+    path: skills/network-modeling/SKILL.md
+    aliases: [networkx, graph-analysis, network-analysis, graph-modeling]
+  scientific-visualization:
+    path: skills/scientific-visualization/SKILL.md
+    aliases: [academic-figure, academic-research-plotting, agent-figure-gallery, data-visualization, figure-designer, figures4papers, matplotlib-consistency, modelviz, plot-maxxing, sci-figure, scipilot-figure, terminal-plot, tufte-data-viz]
+  technical-diagrams:
+    path: skills/technical-diagrams/SKILL.md
+    aliases: [technical-route-diagram, flowchart, drawio-diagram]
+  scientific-tables:
+    path: skills/scientific-tables/SKILL.md
+    aliases: [table-generation, result-tables, ablation-tables, comparison-tables]
+  academic-writing:
+    path: skills/academic-writing/SKILL.md
+    aliases: [academic-writing-skills, ai-paper-writing, paper-skill, paper-writing, paper-write, paper-plan, paper-narrative, scientific-writing, result-to-claim]
+  academic-humanization:
+    path: skills/academic-humanization/SKILL.md
+    aliases: [academic-humanizer, chinese-thesis-de-ai, de-ai-flavor, de-aigc-ch, de-AIGC-skill, humanizer, humanizer-patterns, skill-deslop, unslop]
+  workflow-orchestration:
+    path: skills/workflow-orchestration/SKILL.md
+    aliases: [collab-session, find-skill, rad-skills, seedex, spark-protocol, planning-with-files, research-pipeline, research-refine-pipeline]
+  literature-evidence:
+    path: skills/literature-evidence/SKILL.md
+    aliases: [citation-verification, source-map, literature-audit, paper-lookup, literature-search, academic-search, source-retrieval, openalex-database, pubmed-database, arxiv-database, biorxiv-database, semantic-scholar, arxiv, research-lit, deepxiv, alphaxiv, exa-search, gemini-search, firecrawl-search, keenable-search, openalex, citation-audit, citation-crosscheck]
+  systematic-evidence-review:
+    path: skills/systematic-evidence-review/SKILL.md
+    aliases: [deep-research, systematic-review, literature-review, evidence-synthesis, literature-matrix, research-question-validation]
+  exemplar-distillation:
+    path: skills/exemplar-distillation/SKILL.md
+    aliases: [exemplary-paper-analysis, winning-paper-distillation]
+  validation-and-robustness:
+    path: skills/validation-and-robustness/SKILL.md
+    aliases: [robustness, validation-analysis, sensitivity-analysis, experiment-validation, experiment-audit, ablation-planner, training-check]
+  reproducibility-audit:
+    path: skills/reproducibility-audit/SKILL.md
+    aliases: [replication-audit, consistency-checker, paper-audit, open-science-audit, paper-claim-audit, integrity-forensics]
+  national-award-paper-style:
+    path: skills/national-award-paper-style/SKILL.md
+    aliases: [cumcm-award-style, winning-patterns, guosai-paper-style]
+  measured-experiment-loop:
+    path: skills/measured-experiment-loop/SKILL.md
+    aliases: [codex-autoresearch, autoresearch, run-experiment, monitor-experiment, experiment-queue, dse-loop]
+  jupyter-live-analysis:
+    path: skills/jupyter-live-analysis/SKILL.md
+    aliases: [jupyter-live-kernel, live-jupyter]
+  sql-data-analysis:
+    path: skills/sql-data-analysis/SKILL.md
+    aliases: [sql-helper, text-to-sql]
+  academic-translation:
+    path: skills/academic-translation/SKILL.md
+    aliases: [translation, sci-ssci-polishing, paper-translation]
+  research-presentation:
+    path: skills/research-presentation/SKILL.md
+    aliases: [scholar-slides, paper-to-slides, nature-paper2ppt, codex-ppt, paper-slides, slides-polish, paper-talk]
+  plan-and-execution:
+    path: skills/plan-and-execution/SKILL.md
+    aliases: [writing-plans, executing-plans]
+  competition-scoring:
+    path: skills/competition-scoring/SKILL.md
+    aliases: [judge-review, paper-scoring, pre-submission-score, pre-submission-reviewer, supervisor-review]
+  submission-packaging:
+    path: skills/submission-packaging/SKILL.md
+    aliases: [submission-audit, delivery-packaging, final-package, paper-compile]
+  ai-use-disclosure:
+    path: skills/ai-use-disclosure/SKILL.md
+    aliases: [ai-usage-disclosure, generative-ai-declaration, ai-use-audit]
+standalone_skills:
+  skill-creator:
+    path: references/external-skills/skill-creator/SKILL.md
+external_skills:
+  math-modeling-paper-review:
+    discovery: installed-skill
+    expected_name: math-modeling-paper-review
+    installed_path_hint: $CODEX_HOME/skills/math-modeling-paper-review/SKILL.md
+    fallback: skills/competition-scoring/SKILL.md
+    invoke_after: complete-paper-compiled
+stage_routes:
+  G0: [workflow-orchestration, plan-and-execution, ai-use-disclosure]
+  G1: [problem-forensics, data-analysis, jupyter-live-analysis]
+  "G1.5": [literature-evidence, exemplar-distillation]
+  G2: [model-deliberation, model-formulation-and-solving, plan-and-execution]
+  G3: [model-formulation-and-solving, data-analysis, jupyter-live-analysis, sql-data-analysis]
+  "G3.5": [validation-and-robustness, measured-experiment-loop]
+  G4: [scientific-visualization, technical-diagrams, scientific-tables, academic-writing, national-award-paper-style, academic-translation, research-presentation]
+  G5: [reproducibility-audit, academic-writing, national-award-paper-style]
+  G6: [competition-scoring, math-modeling-paper-review, reproducibility-audit, academic-writing, academic-humanization]
+  G7: [submission-packaging, reproducibility-audit, ai-use-disclosure]
+conditional_routes:
+  derivation-or-proof-critical:
+    when: a material result depends on a nontrivial formula derivation, theorem, proposition, error bound, approximation chain, or algorithmic guarantee
+    stages: [G2, G3, G4, G6]
+    skills: [mathematical-derivation-and-proof]
+  external-data-needed:
+    when: the model needs public APIs, portals, repositories, webpages, or secondary datasets beyond official attachments
+    stages: [G0, G1, "G1.5", G3, G5, G6]
+    skills: [external-data-acquisition]
+  prospective-or-controlled-experiment:
+    when: the project controls assignment, data collection, simulation runs, algorithm comparisons, factorial settings, or a causal estimand
+    stages: [G1, G2, G3, "G3.5", G6]
+    skills: [experimental-design-and-inference]
+  temporal-prediction:
+    when: target is ordered by time or a future horizon is requested
+    stages: [G1, G2, G3, "G3.5", G4, G6]
+    skills: [forecasting-and-backtesting]
+  stochastic-or-event-system:
+    when: random inputs, queues, resources, scenarios, or uncertainty propagation affect conclusions
+    stages: [G2, G3, "G3.5", G4, G6]
+    skills: [simulation-and-uncertainty]
+  spatial-system:
+    when: coordinates, regions, routes, rasters, adjacency, or geographic distance affect the model
+    stages: [G1, G2, G3, "G3.5", G4, G6]
+    skills: [geospatial-modeling]
+  relational-system:
+    when: nodes, edges, paths, flows, communities, or diffusion are modeled
+    stages: [G1, G2, G3, "G3.5", G4, G6]
+    skills: [network-modeling]
+  formal-literature-review:
+    when: user requests deep research, systematic review, formal literature review, evidence synthesis, or a defensible state-of-the-art map
+    stages: [G0, G1, "G1.5", G2, "G3.5", G4, G6]
+    skills: [systematic-evidence-review]
+mode_routes:
+  solve: [G0, G1, "G1.5", G2, G3, "G3.5", G4, G5, G6, G7]
+  review: [G6]
+  repair: [affected-stage, downstream-dependency-cone, G5, G6, G7]
+  score: [G6]
+  deliver: [G5, G6, G7]
+coverage_control:
+  reference: references/skill-coverage-and-rework.md
+  ledger: 求解/计划/skill_use_ledger.json
+  statuses: [pending, active, not_applicable, blocked, complete, superseded]
+  rule: every canonical skill must have a trigger decision; active skills must leave current-revision evidence
+rework_control:
+  reference: references/skill-coverage-and-rework.md
+  log: 求解/计划/rework_log.jsonl
+  record_script: scripts/record_rework.py
+  close_script: scripts/close_rework.py
+  rule: material upstream changes invalidate the downstream dependency cone and require replay before refreeze
